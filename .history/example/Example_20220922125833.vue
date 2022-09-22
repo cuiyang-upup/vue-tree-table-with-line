@@ -64,7 +64,7 @@
         {{ scope.row.likes.join(",") }}
       </template>
       <template slot="name" slot-scope="scope">
-        <span style="color: red"> {{ scope.row.name + "11" }}</span>
+        <span style="color: #333"> {{ scope.row.name + "11" }}</span>
        
       </template>
     </zk-table>

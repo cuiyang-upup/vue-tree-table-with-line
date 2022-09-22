@@ -28,8 +28,7 @@
       :selection-type="props.selectionType"
       :expand-column="props.expandColumn"
       :account-column="props.accountColumn"
-      :expand-column-num="props.expandColumnNum"
-    >
+      :expand-column-num="props.expandColumnNum">
       <template slot="expand" slot-scope="scope">
         <div class="extend-table">
           <span
@@ -51,8 +50,7 @@
             :is-fold="accountProps.isFold"
             :is-expanded="accountProps.isExpanded"
             :expand-type="accountProps.expandType"
-            :selection-type="accountProps.selectionType"
-          >
+            :selection-type="accountProps.selectionType">
             <template slot="operation">
               <button>解除关联</button>
               <button>变更组织</button>
@@ -61,22 +59,18 @@
         </div>
       </template>
       <template slot="likes" slot-scope="scope">
-        {{ scope.row.likes.join(",") }}
-      </template>
-      <template slot="name" slot-scope="scope">
-        <span style="color: red"> {{ scope.row.name + "11" }}</span>
-       
+        {{ scope.row.likes.join(',') }}
       </template>
     </zk-table>
   </div>
 </template>
 
 <script>
-import TreeFilter from "./TreeFilter/TreeFilter";
-import ZkSwitch from "./Switch/Switch";
+import TreeFilter from './TreeFilter/TreeFilter';
+import ZkSwitch from './Switch/Switch';
 
 export default {
-  name: "example",
+  name: 'example',
   components: {
     ZkSwitch,
     TreeFilter,
@@ -97,103 +91,103 @@ export default {
         expandType: true,
         isExpanded: false,
         selectionType: false,
-        expandColumn: "score",
-        accountColumn: "main_account",
+        expandColumn: 'score',
+        accountColumn: 'main_account',
         expandColumnNum: 3,
       },
       data: [
         {
-          name: "Jack",
-          sex: "male",
-          likes: ["football", "basketball"],
+          name: 'Jack',
+          sex: 'male',
+          likes: ['football', 'basketball'],
           score: 4,
-          main_account: "test",
+          main_account: 'test',
           sub_account_list: [
             {
-              sub_account_user_id: "1",
-              sub_account_user_name: "liulaogen",
-              sub_account_display_name: "liulaogen",
+              sub_account_user_id: '1',
+              sub_account_user_name: 'liulaogen',
+              sub_account_display_name: 'liulaogen',
               sub_account_relation_status: 1,
               sub_account_relation_time: 1638685732000,
-              org_id: "1",
-              org_name: "123233",
+              org_id: '1',
+              org_name: '123233',
             },
             {
-              sub_account_user_id: "2",
-              sub_account_user_name: "jinmantang",
-              sub_account_display_name: "jinmantang",
+              sub_account_user_id: '2',
+              sub_account_user_name: 'jinmantang',
+              sub_account_display_name: 'jinmantang',
               sub_account_relation_status: 1,
               sub_account_relation_time: 1638686832000,
-              org_id: "1",
-              org_name: "123233",
+              org_id: '1',
+              org_name: '123233',
             },
             {
-              sub_account_user_id: "3",
-              sub_account_user_name: "zhangkanjia",
-              sub_account_display_name: "zhangkanjia",
+              sub_account_user_id: '3',
+              sub_account_user_name: 'zhangkanjia',
+              sub_account_display_name: 'zhangkanjia',
               sub_account_relation_status: 1,
               sub_account_relation_time: 1639551093000,
-              org_id: "1",
-              org_name: "123233",
+              org_id: '1',
+              org_name: '123233',
             },
             {
-              sub_account_user_id: "4",
-              sub_account_user_name: "liumanjiang",
-              sub_account_display_name: "liumanjiang",
+              sub_account_user_id: '4',
+              sub_account_user_name: 'liumanjiang',
+              sub_account_display_name: 'liumanjiang',
               sub_account_relation_status: 1,
               sub_account_relation_time: 1639551207000,
-              org_id: "1",
-              org_name: "123233",
+              org_id: '1',
+              org_name: '123233',
             },
           ],
           children: [
             {
-              name: "Ashley1",
-              sex: "female",
-              likes: ["football", "basketball"],
+              name: 'Ashley1',
+              sex: 'female',
+              likes: ['football', 'basketball'],
               score: 4,
               children: [
                 {
-                  name: "Ashley2",
-                  sex: "female",
-                  likes: ["football", "basketball"],
+                  name: 'Ashley2',
+                  sex: 'female',
+                  likes: ['football', 'basketball'],
                   score: 0,
                   sub_account_list: [],
                   children: [],
                 },
                 {
-                  name: "Taki1",
-                  sex: "male",
-                  likes: ["football", "basketball"],
+                  name: 'Taki1',
+                  sex: 'male',
+                  likes: ['football', 'basketball'],
                   score: 0,
                   sub_account_list: [],
                   children: [
                     {
-                      name: "Ashley3",
-                      sex: "female",
-                      likes: ["football", "basketball"],
+                      name: 'Ashley3',
+                      sex: 'female',
+                      likes: ['football', 'basketball'],
                       score: 0,
                       sub_account_list: [],
                       children: [],
                     },
                     {
-                      name: "Tak3",
-                      sex: "male",
-                      likes: ["football", "basketball"],
+                      name: 'Tak3',
+                      sex: 'male',
+                      likes: ['football', 'basketball'],
                       score: 0,
                       sub_account_list: [],
                       children: [
                         {
-                          name: "Ashley4",
-                          sex: "female",
-                          likes: ["football", "basketball"],
+                          name: 'Ashley4',
+                          sex: 'female',
+                          likes: ['football', 'basketball'],
                           score: 0,
                           sub_account_list: [],
                         },
                         {
-                          name: "Taki4",
-                          sex: "male",
-                          likes: ["football", "basketball"],
+                          name: 'Taki4',
+                          sex: 'male',
+                          likes: ['football', 'basketball'],
                           score: 0,
                           sub_account_list: [],
                         },
@@ -204,47 +198,47 @@ export default {
               ],
               sub_account_list: [
                 {
-                  sub_account_user_id: "1",
-                  sub_account_user_name: "liulaogen",
-                  sub_account_display_name: "liulaogen",
+                  sub_account_user_id: '1',
+                  sub_account_user_name: 'liulaogen',
+                  sub_account_display_name: 'liulaogen',
                   sub_account_relation_status: 1,
                   sub_account_relation_time: 1638685732000,
-                  org_id: "1",
-                  org_name: "123233",
+                  org_id: '1',
+                  org_name: '123233',
                 },
                 {
-                  sub_account_user_id: "2",
-                  sub_account_user_name: "jinmantang",
-                  sub_account_display_name: "jinmantang",
+                  sub_account_user_id: '2',
+                  sub_account_user_name: 'jinmantang',
+                  sub_account_display_name: 'jinmantang',
                   sub_account_relation_status: 1,
                   sub_account_relation_time: 1638686832000,
-                  org_id: "1",
-                  org_name: "123233",
+                  org_id: '1',
+                  org_name: '123233',
                 },
                 {
-                  sub_account_user_id: "3",
-                  sub_account_user_name: "zhangkanjia",
-                  sub_account_display_name: "zhangkanjia",
+                  sub_account_user_id: '3',
+                  sub_account_user_name: 'zhangkanjia',
+                  sub_account_display_name: 'zhangkanjia',
                   sub_account_relation_status: 1,
                   sub_account_relation_time: 1639551093000,
-                  org_id: "1",
-                  org_name: "123233",
+                  org_id: '1',
+                  org_name: '123233',
                 },
                 {
-                  sub_account_user_id: "4",
-                  sub_account_user_name: "liumanjiang",
-                  sub_account_display_name: "liumanjiang",
+                  sub_account_user_id: '4',
+                  sub_account_user_name: 'liumanjiang',
+                  sub_account_display_name: 'liumanjiang',
                   sub_account_relation_status: 1,
                   sub_account_relation_time: 1639551207000,
-                  org_id: "1",
-                  org_name: "123233",
+                  org_id: '1',
+                  org_name: '123233',
                 },
               ],
             },
             {
-              name: "Taki",
-              sex: "male",
-              likes: ["football", "basketball"],
+              name: 'Taki',
+              sex: 'male',
+              likes: ['football', 'basketball'],
               score: 0,
               sub_account_list: [],
               children: [],
@@ -255,28 +249,28 @@ export default {
       data2: [],
       columns: [
         {
-          label: "name",
-          prop: "name",
-          width: "400px",
-          type: "template",
-          template: "name",
+          label: 'name',
+          prop: 'name',
+          width: '400px',
+          type: 'template',
+          template: 'name',
         },
         {
-          label: "sex",
-          prop: "sex",
-          minWidth: "50px",
+          label: 'sex',
+          prop: 'sex',
+          minWidth: '50px',
         },
         {
-          label: "score",
-          prop: "score",
-          minWidth: "130px",
+          label: 'score',
+          prop: 'score',
+          minWidth: '130px',
         },
         {
-          label: "likes",
-          prop: "likes",
-          minWidth: "200px",
-          type: "template",
-          template: "likes",
+          label: 'likes',
+          prop: 'likes',
+          minWidth: '200px',
+          type: 'template',
+          template: 'likes',
         },
       ],
       accountProps: {
@@ -295,48 +289,48 @@ export default {
       },
       accountColumns: [
         {
-          label: "子账号名称",
-          prop: "sub_account_user_name",
+          label: '子账号名称',
+          prop: 'sub_account_user_name',
           minWidth: 180,
-          headerAlign: "left",
-          align: "left",
+          headerAlign: 'left',
+          align: 'left',
         },
         {
-          label: "显示名",
-          prop: "sub_account_display_name",
+          label: '显示名',
+          prop: 'sub_account_display_name',
           minWidth: 160,
-          headerAlign: "left",
-          align: "left",
+          headerAlign: 'left',
+          align: 'left',
         },
         {
-          label: "关联状态",
-          prop: "sub_account_relation_status",
+          label: '关联状态',
+          prop: 'sub_account_relation_status',
           minWidth: 90,
-          headerAlign: "left",
-          align: "left",
+          headerAlign: 'left',
+          align: 'left',
         },
         {
-          label: "关联时间",
-          prop: "sub_account_relation_time",
+          label: '关联时间',
+          prop: 'sub_account_relation_time',
           minWidth: 140,
-          headerAlign: "left",
-          align: "left",
+          headerAlign: 'left',
+          align: 'left',
         },
         {
-          label: "操作",
-          prop: "operation",
+          label: '操作',
+          prop: 'operation',
           minWidth: 250,
-          headerAlign: "left",
-          align: "left",
-          type: "template",
-          template: "operation",
+          headerAlign: 'left',
+          align: 'left',
+          type: 'template',
+          template: 'operation',
         },
       ],
     };
   },
   computed: {
     propList() {
-      return Object.keys(this.props).map((item) => ({
+      return Object.keys(this.props).map(item => ({
         name: item,
       }));
     },
@@ -399,7 +393,7 @@ export default {
     height: 14px;
   }
   .ms-tree-space::before {
-    content: "";
+    content: '';
   }
   .extend-table {
     width: 90%;

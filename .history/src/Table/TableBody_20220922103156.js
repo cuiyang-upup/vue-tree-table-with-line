@@ -328,7 +328,7 @@ export default {
       }
       // Tree's firstProp
       if (this.table.treeType && this.table.firstProp === column.prop) {
-        let firstTemplate = '';
+        let firstTemplate
 
         if (column.type === undefined || column.type === 'custom') {
           firstTemplate = row[column.prop];
@@ -479,7 +479,7 @@ export default {
               row[column.prop] &&
               row._level === 1 && (
                 <p class={`${this.prefixCls}--tree-account-wrapper`}>
-                  <span>{firstTemplate}</span>{' '}
+                  <span>{row[column.prop]}</span>{' '}
                   <span class={`${this.prefixCls}--tree-account`}>
                     【主账号: {row[this.table.accountColumn]}】
                   </span>
@@ -489,10 +489,10 @@ export default {
             row[column.prop] &&
             row._level > 1 &&
             row[column.prop]
-              ? firstTemplate
+              ? row[column.prop]
               : ''}
             {!this.table.showAccount && !row.nodeType && row[column.prop]
-              ? firstTemplate
+              ? row[column.prop]
               : ''}
             {!this.table.showAccount && row.nodeType && row[column.prop] ? (
               <span>

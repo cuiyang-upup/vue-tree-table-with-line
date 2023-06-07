@@ -355,14 +355,14 @@ export default {
             style={{
               marginLeft: `${(row._level - 1) * 24}px`,
               paddingLeft: row._childrenLen === 0 ? '20px' : '',
-              lineHeight: '16px',
+              lineHeight: '13px',
               display: 'inline-block',
               // borderLeft: '1px solid #000'
             }}
           >
             {
               level.map(item => (
-                  <>
+                  <div>
                     {
                       (
                           row._level === (item + 1) &&
@@ -420,7 +420,7 @@ export default {
                       )
                     }
 
-                  </>
+                  </div>
               ))
             }
             {row._level > 1 && (

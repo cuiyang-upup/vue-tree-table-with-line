@@ -12,7 +12,7 @@
 
 .@{prefixCls} {
   position: relative;
-  width: 100%;
+  //width: 100%;
   box-sizing: border-box;
   background-color: @white;
   // border: 1px solid @border;
@@ -78,6 +78,15 @@
 }
 
 .@{prefixCls}__cell-inner {
+  padding: 0 8px;
+  height: 40px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  line-height: 40px;
+}
+
+.@{prefixCls}__header-cell-inner {
   padding: 0 8px;
 }
 

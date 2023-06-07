@@ -1,6 +1,6 @@
 {
   "name": "vue-tree-table-with-line-cuiyang",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "A table (with tree-grid, level line) component for Vue.js 2.0. (Its style extends iView)",
   "keywords": [
     "vue",

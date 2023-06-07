@@ -40,7 +40,7 @@ export default {
         }
       }
       if (certainType.inner) {
-        classList.push(`${this.prefixCls}__cell-inner`);
+        classList.push(`${this.prefixCls}__header-cell-inner`);
         if (this.table.treeType && this.table.firstProp === prop) {
           classList.push(`${this.prefixCls}--firstProp-header-inner`);
         }

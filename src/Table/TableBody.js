@@ -342,6 +342,13 @@ export default {
             })
             : '';
         }
+
+        const level = []
+        for (let i = 1; i < row._level; i++) {
+          level.push(i)
+        }
+        const maxIndex = level.length + 1
+
         return (
           <span
             class={`${this.prefixCls}--level-${row._level}-cell`}
@@ -353,6 +360,69 @@ export default {
               // borderLeft: '1px solid #000'
             }}
           >
+            {
+              level.map(item => (
+                  <>
+                    {
+                      (
+                          row._level === (item + 1) &&
+                          <i
+                              className={`${this.prefixCls}--tree-left-line`}
+                              style={{
+                                marginLeft: `${item * 24}px`,
+                              }}
+                          />
+                      )
+                    }
+
+
+                    {
+                      (!row._last[item] ) &&
+                        <i
+                            class={`${this.prefixCls}--tree-top-line`}
+                            style={{
+                              marginLeft: `${item * 24}px`,
+                            }}
+                        />
+                    }
+
+
+
+                    {
+                      // <>
+                      //   <span>{row._level}</span>
+                      //   {/*<span>{maxIndex}</span>*/}
+                      //   <span>{item}</span>
+                      //   {/*<span>{row._isFold.toString()}</span>*/}
+                      // </>
+
+                    }
+                    {/*{*/}
+                    {/*    (*/}
+                    {/*        // row._level === item + 1 &&*/}
+                    {/*        <i*/}
+                    {/*            className={`${this.prefixCls}--tree-bottom-line`}*/}
+                    {/*            style={{*/}
+                    {/*              marginLeft: `${item * 24}px`,*/}
+                    {/*            }}*/}
+                    {/*        />*/}
+                    {/*    )*/}
+                    {/*}*/}
+                    {
+                      (
+                         !row._last[item] &&
+                          <i
+                                class={`${this.prefixCls}--tree-left-bottom-line`}
+                                style={{
+                                  marginLeft: `${item * 24}px`,
+                                }}
+                            />
+                      )
+                    }
+
+                  </>
+              ))
+            }
             {row._level > 1 && (
                 <i
                   class={`${this.prefixCls}--tree-top-line`}
@@ -387,79 +457,7 @@ export default {
                   }}
                 />
               )}
-            {row._level > 2 &&
-              row._last &&
-              !row._last[1] && (
-                <i
-                  class={`${this.prefixCls}--tree-level1-line`}
-                  style={{
-                    marginLeft: `${(row._level - 1) * 24}px`,
-                    left: `${((row._level - 2) * (-24)) - 5}px`,
-                  }}
-                />
-              )}
-            {row._level === 4 &&
-              row._last &&
-              !row._last[2] && (
-                <i
-                  class={`${this.prefixCls}--tree-level2-line`}
-                  style={{
-                    left: `${((row._level - 2) * 22) - 1}px`,
-                  }}
-                />
-              )}
-            {row._level > 4 &&
-              row._last &&
-              !row._last[2] &&
-              !row._last[3] &&
-              !row.nodeType && (
-                <i
-                  class={`${this.prefixCls}--tree-level2-line`}
-                  style={{
-                    left: `${((row._level - 3) * 22) - 1}px`,
-                  }}
-                />
-              )}
-            {row._level > 4 &&
-              row._last &&
-              !row._last[2] &&
-              row.nodeType &&
-              row.nodeType === 'subAccount' && (
-                <i
-                  class={`${this.prefixCls}--tree-level2-line`}
-                  style={{
-                    left:
-                      row._level < 6
-                        ? `${((row._level - 3) * 22) - 1}px`
-                        : `${((row._level - 4) * 22) - 1}px`,
-                  }}
-                />
-              )}
-            {row._level === 5 &&
-              row._last &&
-              !row._last[3] && (
-                <i
-                  class={`${this.prefixCls}--tree-level3-line`}
-                  style={{
-                    left: `${((row._level - 3) * 33) + 1}px`,
-                  }}
-                />
-              )}
-            {row._level > 5 &&
-              row._last &&
-              !row._last[3] &&
-              row.nodeType &&
-              row.nodeType === 'subAccount' && (
-                <i
-                  class={`${this.prefixCls}--tree-level3-line`}
-                  style={{
-                    left:
-                      row._level < 6
-                        ? `${((row._level - 3) * 33) + 1}px`
-                        : `${((row._level - 4) * 33) + 1}px`,
-                  }}
-                />
-              )}
+            
             {row._childrenLen > 0 && (
               <i
                 class={`${this.prefixCls}--tree-icon zk-icon zk-icon-${
@@ -671,6 +669,7 @@ export default {
                         column,
                         columnIndex,
                       )}
+                      title={row[column.prop]}
                     >
                       {renderCell.call(
                         this,
